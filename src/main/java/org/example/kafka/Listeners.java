@@ -16,6 +16,7 @@ public class Listeners {
     private final ObjectMapper objectMapper = new ObjectMapper();
     @KafkaListener(topics = "created", groupId = "app123")
     public void msgListener(ConsumerRecord<Long,Order> record) throws InterruptedException, JsonProcessingException {
+        System.out.println("----------------------------------------");
         System.out.println("Создан заказ: " + record.value());
         System.out.println("----------------------------------------");
         String order = String.valueOf(record.value());

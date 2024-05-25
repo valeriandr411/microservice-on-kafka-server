@@ -6,7 +6,6 @@ import org.example.model.Order;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
@@ -15,8 +14,6 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 import java.util.HashMap;
 import java.util.Map;
-//- backend для производства пиццы - считывает сообщение из kafka,
-// ожидает 1 минуту, записывает в другую очередь kafka, что заказ готов.
 @Configuration
 public class KafkaConsumerConfig {
     @Value("${spring.kafka.bootstrap-servers}")
